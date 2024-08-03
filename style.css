@@ -8,4 +8,99 @@
 body {
   font-family: Noto Serif;
 }
+nav {
+  display: flex;
+  background-color: red;
+  height: 80px;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0px 50px 0px 80px;
+  align-items: center;
+}
 
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+}
+nav ul li {
+  list-style-type: none;
+  margin: 0 8px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  transition: 0.5s;
+  padding: 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #566573;
+}
+
+.menu-btn {
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+#click {
+  display: none;
+}
+
+/* responsive work start */
+
+@media only screen and (max-width: 940px) {
+  .menu-btn {
+    display: block;
+  }
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background-color: #566573;
+    height: 100vh;
+    width: 100%;
+    padding-top: 20px;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.5s ease;
+  }
+  #click:checked ~ .menu-btn i::before {
+    content: "\f00d";
+  }
+  #click:checked ~ ul {
+    left: 0%;
+  }
+  nav ul li {
+    margin: 50px 10px;
+  }
+  nav ul li a {
+    font-size: 22px;
+  }
+  nav ul li a:hover,
+  nav ul li a.active {
+    background: none;
+    color: red;
+  }
+}
+
+/* header section code start here */
+header {
+  background-image: url("images/istock.webp");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: 10px;
+  background-position: center;
+}
+/* header section code end here */
